@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:poser/demo_values/demo_pose.dart';
+import 'package:poser/pages/pose_card.dart';
 import 'package:poser/pages/poses_listview.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: true,
         leading: Builder(builder: (context) {
           return IconButton(
             icon: const Icon(Icons.account_circle),
@@ -37,7 +40,12 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: PoseListView(),
+      body: ListView.builder(
+        itemCount: DemoValues.poses.length,
+        itemBuilder: (BuildContext context, int index) {
+          return PoseListView(poseData: DemoValues.poses[index]);
+        },
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),

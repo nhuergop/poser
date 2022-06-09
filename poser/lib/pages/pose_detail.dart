@@ -1,32 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:poser/models/pose_model.dart';
 
-class PoseDetail extends StatefulWidget {
-  PoseDetail({Key? key}) : super(key: key);
+class PoseDetail extends StatelessWidget {
+  final PoseModel poseData;
 
-  @override
-  State<PoseDetail> createState() => _PoseDetailState();
-}
-
-class _PoseDetailState extends State<PoseDetail> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  const PoseDetail({Key? key, required this.poseData}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Builder(builder: (context) {
-          return IconButton(
-            icon: const Icon(Icons.account_circle),
-            onPressed: () {},
-            tooltip: 'Profile',
-          );
-        }),
         title: const Text('Poser'),
         actions: <Widget>[
           IconButton(
@@ -36,19 +19,7 @@ class _PoseDetailState extends State<PoseDetail> {
           )
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(
-              icon: IconButton(
-                icon: const Icon(Icons.account_circle),
-                onPressed: () {},
-              ),
-              label: 'Profile'),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-      ),
+      body: Center(child: Text(poseData.title)),
     );
   }
 }
