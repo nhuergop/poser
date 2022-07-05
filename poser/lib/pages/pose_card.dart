@@ -20,7 +20,7 @@ class PoseCard extends StatelessWidget {
     final int mendaz_count = poseData.mendaz_count;
     final String url = poseData.url;
 
-    String getUserName() {
+    String getSharersList() {
       for (var sharer in sharers_list) {
         if (sharer == sharers_list[0]) {
           sharers = sharers + sharer.name;
@@ -51,7 +51,7 @@ class PoseCard extends StatelessWidget {
               children: [
                 Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: [Text('shared by' + getUserName())]),
+                    children: [Text('shared by' + getSharersList())]),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [

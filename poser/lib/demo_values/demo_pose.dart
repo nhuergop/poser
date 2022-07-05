@@ -9,7 +9,7 @@ class DemoValues {
       email: "ishfar@gmail.com",
       followers: 123,
       joined: DateTime(2019, 4, 30),
-      poses: 12,
+      poses: [poses[2], poses[3]],
     ),
     UserModel(
       id: "2",
@@ -17,7 +17,7 @@ class DemoValues {
       email: "ishrak@gmail.com",
       followers: 456,
       joined: DateTime(2018, 5, 30),
-      poses: 13,
+      poses: [poses[1], poses[3]],
     ),
     UserModel(
       id: "3",
@@ -25,7 +25,7 @@ class DemoValues {
       email: "shakleen@gmail.com",
       followers: 789,
       joined: DateTime(2017, 6, 30),
-      poses: 14,
+      poses: [poses[2], poses[1]],
     ),
   ];
 
@@ -34,7 +34,9 @@ class DemoValues {
         id: "1",
         sharers: users,
         title:
-            "Research finds overpopulation could be biggets threat to humanity. More birth control could be needed",
+            "Research finds overpopulation could be biggest threat to humanity. More birth control could be needed",
+        veraz: [poses[2], poses[3]],
+        mendaz: [poses[2], poses[3]],
         veraz_count: 733,
         mendaz_count: 1554,
         url: 'spacebetweennews.com'),
@@ -42,6 +44,8 @@ class DemoValues {
         id: "2",
         sharers: [users[1], users[0]],
         title: "Biden reportedly said not to support BLM anymore",
+        veraz: [poses[1], poses[3]],
+        mendaz: [poses[1], poses[3]],
         veraz_count: 321,
         mendaz_count: 654,
         url: 'nytimes.com'),
@@ -49,6 +53,8 @@ class DemoValues {
         id: "3",
         sharers: [users[2]],
         title: "ISS collided with massive asteroid. Everyone saved by Tesla",
+        veraz: [poses[1], poses[2]],
+        mendaz: [poses[1], poses[2]],
         veraz_count: 213,
         mendaz_count: 546,
         url: 'xataka.com'),

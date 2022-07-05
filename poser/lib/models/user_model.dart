@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:poser/models/pose_model.dart';
 
 class UserModel {
   final String id;
@@ -7,7 +8,8 @@ class UserModel {
   // final String image;
   final int followers;
   final DateTime joined;
-  final int poses;
+  // las poses para listarlas en perfil
+  final List<PoseModel> poses;
 
   const UserModel({
     required this.id,
